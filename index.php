@@ -227,7 +227,7 @@ should the function be called again.
 // $var = constant('ARR');
 // print $var[3];
 
-define('__THREE__', 'hello'); //invalid constant
+//define('__THREE__', 'hello'); //invalid constant
 
 /** MAGIC CONSTANTS 
  * __LINE__
@@ -243,8 +243,199 @@ define('__THREE__', 'hello'); //invalid constant
 // echo __METHOD__; // returns method class name
 
 
+// print $d=date("W");
 
+// $i = 0;
+// $num = 0;
+// do
+// {
+// $i++;
+// }while( $i < 10 );
+// echo ("Loop stopped at i = $i" );
+
+
+/** FOREACH LOOP
+ * 
+ * 
+ */
+// $arr = array(2,3,2,1,3,"hey",'45', false, NULL);
+
+// foreach($arr as $val){
+//   print $val;
+// }
+
+
+
+/** BREAK STATEMENT
+ * 
+ */
+// $i = 0;
+// while( $i < 10)
+// {
+// $i++;
+// if( $i == 3 )break;
+// }
+// echo ("Loop stopped at i = $i" );
+
+/**ARRAYS
+ * Numeric
+ * Associative
+ * Multidimentional
+ */
+
+ /**Numeric arrays
+  * An array with a numeric index. Values are stored and accessed
+    in linear fashion
+  */
+      /* First method to create array. */
+      // $numbers = array( 1, 2, 3, 4, 5);
+      // foreach( $numbers as $value )
+      // {
+      // echo "Value is $value <br />";
+      // }
+      // /* Second method to create array. */
+      // $numbers[0] = "one";
+      // $numbers[1] = "two";
+      // $numbers[2] = "three";
+
+/** Associative Array
+ * 
+  */
+     /* First method to associate create array. */
+      // $salaries = array(
+      //   "mohammad" => 2000,
+      //   "qadir" => 1000,
+      //   "zara" => 500,
+      //   "x" => 29
+      // );
+
+      // echo $salaries["x"];
+
+    /* Second method to create array. */
+      // $salaries['mann'] = "high";
+      // $salaries['musa'] = "medium";
+      // $salaries['zora'] = "low";
+
+
+/**Multidimentional Arrays
+ * A multi-dimensional array each element in the main array can also be an array. And each
+    element in the sub-array can be an array, and so on. Values in the multi-dimensional array
+    are accessed using multiple index.
+ */
+    // $marks = array(
+    //   "mohammad" => array
+    //   (
+    //   "physics" => 35,
+    //   "maths" => 30,
+    //   "chemistry" => 39
+    //   ),
+    //   "qadir" => array
+    //   (
+    //   "physics" => 30,
+    //   "maths" => 32,
+    //   "chemistry" => 29
+    //   ),
+    //   "zara" => array
+    //   (
+    //   "physics" => 31,
+    //   "maths" => 22,
+    //   "chemistry" => 39
+    //   )
+    //   );
+
+    //   echo $marks["mohammad"]['chemistry'];
+
+/** Single and Double Quoted strings 
+ * Singly quoted strings are treated almost literally, where 
+ * as doubly quoted strings replace variables with their values as well as specially interpreting certain character sequences
+*/
+      // $variable = "name";
+      // $literally = 'My $variable will not print!\\n'; //output a string with the variable name
+      // print($literally);
+      // $literally = "My $variable will print!\\n"; //output a string with the value of the variable
+      // print($literally);
+
+
+// $string_1 = "John";
+// $string_2 = "Doe";
+// $string_3 = $string_1 . " " . $string_2;
+
+// echo $string_3;
+
+
+/**dentifying Browser & Platform
+ * HTTP_USER_AGENT which identifies the user's browser and operating system.
+ * getenv() to access the value of all the environment variables.
+ */
+      // $environment = getenv("HTTP_USER_AGENT");
+      // if( preg_match( "/Windows/i", "$environment" ) )
+      // {
+      //   print "Windows";
+      //   echo $environment;
+      // }
+
+
+/**Randon generator
+ * rand() function
+ * srand() function: seeded random number
+ */
+
+    // srand( microtime() * 200000); //seeded number
+
+    // $num = rand(1,4);
+    // echo $num;
+    
 ?>
 
+  <?php
+    // if( $_POST["name"] || $_POST["age"] )
+    // {
+    // echo "Welcome ". $_POST['name']. "<br />";
+    // echo "You are ". $_POST['age']. " years old.";
+    // exit();
+    // }
+  ?>
+
+
+  <!-- <form action="<?php $_PHP_SELF ?>" method="POST">
+    Name: <input type="text" name="name" />
+    Age: <input type="text" name="age" />
+        <input type="submit" />
+  </form> -->
+
+  <?php
+  
+  /**Browser Redirection
+   * PHP header() function supplies raw HTTP headers to the browser and can be used to
+    redirect it to another location. The redirection script should be at the very top of the page
+    to prevent any other part of the page from loading.
+
+    *The target is specified by the Location: header as the argument to the header() function.
+    After calling this function the exit() function can be used to halt parsing of rest of the
+    code.
+    *
+   */
+
+  //     if( $_POST["location"] )
+  //     {
+  //     $location = $_POST["location"];
+  //     header( "Location:$location" );
+  //     exit();
+  //     }
+  // ?>
+      <!-- <p>Choose a site to visit :</p>
+      <form action="<?php $_PHP_SELF ?>" method="POST">
+          <select name="location">
+            <option value="http://w3c.org">
+            World Wise Web Consortium
+            </option>
+            <option value="http://www.google.com">
+            Google Search Page
+            </option>
+          </select>
+          <input type="submit" />
+      </form> -->
+
+      
 </body>
 </html>
